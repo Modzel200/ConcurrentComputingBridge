@@ -36,3 +36,25 @@ void addCar(Car_t **carStart, int carId, long int threadId, const char* cityName
     }
     return;
 }
+
+void deleteList(Car_t** carStart)
+{
+    Car_t* currentCar = (*carStart);
+    Car_t* nextNode;
+    while (currentCar != NULL) {
+        nextNode = currentCar->next;
+        free(currentCar);
+        currentCar = nextNode;
+    }
+    *carStart = NULL;
+}
+
+int printAllCars(Car_t *carStart){
+    Car_t* currentCar = carStart;
+    while(currentCar!=NULL){
+        printf("ID: %d, Thread: %ld, Is he waiting: d%, It's city: %s, Idling for: %d\n",currentCar->carId,currentCar->threadId,currentCar->isWaiting,currentCar->cityName,currentCar->idleMeter);
+        currentCar = currentCar->next;
+    }
+    return 1;
+}
+
