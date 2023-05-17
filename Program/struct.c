@@ -12,7 +12,7 @@ typedef struct Car {
     struct Car * next;
 } Car_t;
 
-void addCar(Car_t **carStart, int carId, int threadId, const char* cityName, int idleMeter){
+void addCar(Car_t **carStart, int carId, long int threadId, const char* cityName, int idleMeter){
     if(*carStart ==NULL){
         *carStart = (Car_t*)malloc(sizeof(Car_t));
         (*carStart)->carId = carId;
