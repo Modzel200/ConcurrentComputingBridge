@@ -4,29 +4,19 @@
 #include <pthread.h>
 #include "struct.c"
 #include <time.h>
-pthread_mutex_t mutex;
-int variable=0;
-void* test()
-{
-   for(int i=0;i<1000000;i++)
-   {
-      pthread_mutex_lock(&mutex);
-      variable++;
-      pthread_mutex_unlock(&mutex);
+#include "simulation.c"
+#include "random.c"
 
-   }
-}
+int variable=0;
 
 int main(int argc, char *argv[]) {
+   srand(time(NULL));
    if(argc<2)
    {
       printf("Nie podano parametru okreslajacego liczbe samochodow\n");
       return 0;
    }
-   time_t tt;
-   int seed = time(&tt);
-   srand(seed);
-   pthread_mutex_init(&mutex,NULL);
+   printf("Randomowa liczba%d",randValue());
    printf("Liczba pojazdow: %s\n",argv[1]);
    int numberOfThreads = atoi(argv[1]);
    pthread_t listOfThreads[numberOfThreads];
@@ -38,11 +28,6 @@ int main(int argc, char *argv[]) {
    char *place;
    for(int i=0;i<numberOfThreads;i++)
    {
-      if(pthread_create(&listOfThreads[i],NULL,&test,NULL)!=0)
-      {
-         //tu będziemy zwracać informacje o błędzie
-         return 0;
-      }
       if(rand()%2==0)
       {
          place = places[0];
@@ -53,6 +38,7 @@ int main(int argc, char *argv[]) {
       }
       addCar(&cars,i,listOfThreads[i],place,rand()%5+1);
    }
+   
    /*
    for(int i=0;i<numberOfThreads;i++)
    {
@@ -62,7 +48,8 @@ int main(int argc, char *argv[]) {
       }      
    }
    */
-   pthread_mutex_destroy(&mutex);
+   printAllCars(cars);
+   simulation(&cars);
    printf("Ilość wykonanych iteracji: %d\n",variable);
    return 0;
 }

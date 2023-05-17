@@ -27,9 +27,9 @@ void addCar(Car_t **carStart, int carId, long int threadId, const char* cityName
             currentCar=currentCar->next;
         }
         currentCar->next = (Car_t *)malloc(sizeof(Car_t));
-        currentCar->carId = carId;
-        currentCar->threadId = threadId;
-        currentCar->isWaiting = false;
+        currentCar->next->carId = carId;
+        currentCar->next->threadId = threadId;
+        currentCar->next->isWaiting = false;
         strcpy(currentCar->next->cityName,cityName);
         currentCar->next->idleMeter=idleMeter;
         currentCar->next->next=NULL;
@@ -52,7 +52,7 @@ void deleteList(Car_t** carStart)
 int printAllCars(Car_t *carStart){
     Car_t* currentCar = carStart;
     while(currentCar!=NULL){
-        printf("ID: %d, Thread: %ld, Is he waiting: d%, It's city: %s, Idling for: %d\n",currentCar->carId,currentCar->threadId,currentCar->isWaiting,currentCar->cityName,currentCar->idleMeter);
+        printf("ID: %d, Thread: %ld, Is he waiting: %d, It's city: %s, Idling for: %d\n",currentCar->carId,currentCar->threadId,currentCar->isWaiting,currentCar->cityName,currentCar->idleMeter);
         currentCar = currentCar->next;
     }
     return 1;
