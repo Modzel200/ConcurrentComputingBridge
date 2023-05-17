@@ -6,19 +6,19 @@
 #include<unistd.h>
 
 pthread_mutex_t mutex;
-void *onBridge(void **currentCarr) 
+void *onBridge(Car_t **currentCar) 
 {
     pthread_mutex_lock(&mutex);
-    Car_t *currentCar = (Car_t*) *currentCarr;
     pthread_t selfThread=pthread_self();
     printf("Jestem na moście moje id to: %ld\n",selfThread);
-    if(strcmp(currentCar->cityName,"CityA")==0)
+    printf((*currentCar));
+    if(strcmp((*currentCar)->cityName,"CityA")==0)
     {
-        strcpy(currentCar->cityName,"CityB");
+        strcpy((*currentCar)->cityName,"CityB");
     }
     else
     {
-        strcpy(currentCar->cityName,"CityA");
+        strcpy((*currentCar)->cityName,"CityA");
     }
     pthread_mutex_unlock(&mutex);
 }
@@ -42,7 +42,8 @@ void simulation(Car_t **cars)
             }
             if(currentCar->isWaiting==true)
             {
-                pthread_create(&currentCar->threadId,NULL,&onBridge,(void*)(&currentCar));
+                pthread_t threadtest;
+                pthread_create(&threadtest,NULL,onBridge,&currentCar);
                 //pthread_join(currentCar->threadId,NULL);
                 currentCar->idleMeter=rand()%5+1;
                 currentCar->isWaiting=false;
