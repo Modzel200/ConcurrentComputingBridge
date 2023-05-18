@@ -4,7 +4,7 @@
 #include <pthread.h>
 #include <time.h>
 #include<unistd.h>
-
+#include "draw.c"
 pthread_mutex_t mutex;
 void *onBridge(void *car) 
 {
@@ -12,20 +12,17 @@ void *onBridge(void *car)
     pthread_mutex_lock(&mutex);
     long int selfThread = pthread_self();
     printf("Jestem na moście moje id to: %ld\n",selfThread);
-    printf("ID AUTA: %d\n",currentCar->carId);
-    currentCar->carId=99;
-    printf("ID AUTA: %d\n",currentCar->carId);
+    strcpy(currentCar->cityName,"Bridge");
     sleep(5);
     pthread_mutex_unlock(&mutex);
 }
 
 void simulation(Car_t **cars)
 {
-    Car_t *firstCar;
     pthread_mutex_init(&mutex,NULL);    
     Car_t *currentCar;
     currentCar=*cars;
-    firstCar = *cars;
+    char *lastCity;
     while(1)
     {
         printAllCars(*cars);
@@ -41,9 +38,27 @@ void simulation(Car_t **cars)
             }
             if(currentCar->isWaiting==true)
             {
+                int tmpLen=strlen(currentCar->cityName);
+                lastCity = (char*)malloc((tmpLen+1)*sizeof(char));
+                strcpy(lastCity,currentCar->cityName);
                 pthread_create(&currentCar->threadId,NULL,onBridge,(void*) currentCar);
+                pthread_join(currentCar->threadId,NULL);
                 currentCar->idleMeter=rand()%5+1;
                 currentCar->isWaiting=false;
+            }
+            //draw(*cars);
+            
+            if(strcmp(currentCar->cityName,"Bridge")==0)
+            {
+                if(strcmp(lastCity,"CityA")==0)
+                {
+                    strcpy(currentCar->cityName,"CityB");
+                }
+                else
+                {
+                    strcpy(currentCar->cityName,"CityA");
+                }
+                free(lastCity);
             }
             currentCar = currentCar->next;
         }
