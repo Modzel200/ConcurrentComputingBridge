@@ -6,20 +6,26 @@
 #include<unistd.h>
 
 pthread_mutex_t mutex;
-void *onBridge() 
+void *onBridge(void *car) 
 {
+    Car_t *currentCar = (struct Car*)car;
     pthread_mutex_lock(&mutex);
     long int selfThread = pthread_self();
     printf("Jestem na moście moje id to: %ld\n",selfThread);
+    printf("ID AUTA: %d\n",currentCar->carId);
+    currentCar->carId=99;
+    printf("ID AUTA: %d\n",currentCar->carId);
     sleep(5);
     pthread_mutex_unlock(&mutex);
 }
 
 void simulation(Car_t **cars)
 {
+    Car_t *firstCar;
     pthread_mutex_init(&mutex,NULL);    
     Car_t *currentCar;
     currentCar=*cars;
+    firstCar = *cars;
     while(1)
     {
         printAllCars(*cars);
@@ -35,7 +41,7 @@ void simulation(Car_t **cars)
             }
             if(currentCar->isWaiting==true)
             {
-                pthread_create(&currentCar->threadId,NULL,onBridge,NULL);
+                pthread_create(&currentCar->threadId,NULL,onBridge,(void*) currentCar);
                 currentCar->idleMeter=rand()%5+1;
                 currentCar->isWaiting=false;
             }
