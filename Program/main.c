@@ -19,7 +19,8 @@ int main(int argc, char *argv[]) {
    printf("Randomowa liczba%d",randValue());
    printf("Liczba pojazdow: %s\n",argv[1]);
    int numberOfThreads = atoi(argv[1]);
-   pthread_t listOfThreads[numberOfThreads];
+   pthread_t *listOfThreads;
+   listOfThreads = calloc(numberOfThreads,sizeof(pthread_t));
    Car_t *cars = NULL;
    char *places[3];
    places[0]="CityA";

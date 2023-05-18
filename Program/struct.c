@@ -55,6 +55,7 @@ int printAllCars(Car_t *carStart){
         printf("ID: %d, Thread: %ld, Is he waiting: %d, It's city: %s, Idling for: %d\n",currentCar->carId,currentCar->threadId,currentCar->isWaiting,currentCar->cityName,currentCar->idleMeter);
         currentCar = currentCar->next;
     }
+    printf("----------------------------------------------------------\n");
     return 1;
 }
 
