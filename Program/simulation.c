@@ -10,22 +10,26 @@ void *onBridge(void *car)
 {
     Car_t *currentCar = (struct Car*)car;
     pthread_mutex_lock(&mutex);
-    long int selfThread = pthread_self();
-    printf("Jestem na moście moje id to: %ld\n",selfThread);
+    //printf("Jestem na moście moje id to: %ld\n",selfThread);
     strcpy(currentCar->cityName,"Bridge");
-    sleep(5);
+    sleep(2);
     pthread_mutex_unlock(&mutex);
 }
 
-void simulation(Car_t **cars)
+void simulation(Car_t **cars, int numberOfThreads)
 {
     pthread_mutex_init(&mutex,NULL);    
     Car_t *currentCar;
+    pthread_t *listOfThreads;
+    listOfThreads = calloc(numberOfThreads,sizeof(pthread_t));
     currentCar=*cars;
+    int i;
     char *lastCity;
+
     while(1)
     {
-        printAllCars(*cars);
+        i=0;
+        //printAllCars(*cars);
         currentCar=*cars;
         while(currentCar!=NULL){
             if(currentCar->idleMeter==0)
@@ -38,18 +42,23 @@ void simulation(Car_t **cars)
             }
             if(currentCar->isWaiting==true)
             {
-                int tmpLen=strlen(currentCar->cityName);
-                lastCity = (char*)malloc((tmpLen+1)*sizeof(char));
-                strcpy(lastCity,currentCar->cityName);
-                pthread_create(&currentCar->threadId,NULL,onBridge,(void*) currentCar);
-                pthread_join(currentCar->threadId,NULL);
-                currentCar->idleMeter=rand()%5+1;
-                currentCar->isWaiting=false;
+                pthread_mutex_lock(&mutex); // Blokuj mutex przed utworzeniem wątku
+                int tmpLen = strlen(currentCar->cityName);
+                lastCity = (char*)malloc((tmpLen + 1) * sizeof(char));
+                strcpy(lastCity, currentCar->cityName);
+                pthread_mutex_unlock(&mutex); // Odblokuj mutex po utworzeniu wątku
+                pthread_create(&listOfThreads[i], NULL, onBridge, (void*)currentCar);
+                pthread_join(listOfThreads[i], NULL);
+                pthread_mutex_lock(&mutex); // Blokuj mutex przed aktualizacją danych
+                currentCar->threadId=listOfThreads[i];
+                currentCar->idleMeter = rand() % 5 + 1;
+                currentCar->isWaiting = false;
+                pthread_mutex_unlock(&mutex); // Odblokuj mutex po aktualizacji danych
             }
-            //draw(*cars);
             
             if(strcmp(currentCar->cityName,"Bridge")==0)
             {
+                draw(*cars,lastCity);
                 if(strcmp(lastCity,"CityA")==0)
                 {
                     strcpy(currentCar->cityName,"CityB");
@@ -61,6 +70,7 @@ void simulation(Car_t **cars)
                 free(lastCity);
             }
             currentCar = currentCar->next;
+            i++;
         }
         sleep(2);
     }

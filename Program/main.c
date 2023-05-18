@@ -16,11 +16,10 @@ int main(int argc, char *argv[]) {
       printf("Nie podano parametru okreslajacego liczbe samochodow\n");
       return 0;
    }
-   printf("Randomowa liczba%d",randValue());
-   printf("Liczba pojazdow: %s\n",argv[1]);
+   //printf("Randomowa liczba%d",randValue());
+   //printf("Liczba pojazdow: %s\n",argv[1]);
    int numberOfThreads = atoi(argv[1]);
-   pthread_t *listOfThreads;
-   listOfThreads = calloc(numberOfThreads,sizeof(pthread_t));
+   
    Car_t *cars = NULL;
    char *places[3];
    places[0]="CityA";
@@ -37,7 +36,7 @@ int main(int argc, char *argv[]) {
       {
          place = places[1];
       }
-      addCar(&cars,i,listOfThreads[i],place,rand()%5+1);
+      addCar(&cars,i,0,place,rand()%5+1);
    }
    
    /*
@@ -49,8 +48,8 @@ int main(int argc, char *argv[]) {
       }      
    }
    */
-   printAllCars(cars);
-   simulation(&cars);
+   //printAllCars(cars);
+   simulation(&cars,numberOfThreads);
    printf("Ilość wykonanych iteracji: %d\n",variable);
    return 0;
 }
