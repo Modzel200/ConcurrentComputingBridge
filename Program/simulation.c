@@ -42,6 +42,7 @@ void simulation(Car_t **cars, int numberOfThreads)
             }
             if(currentCar->isWaiting==true)
             {
+                draw(*cars,lastCity);
                 pthread_mutex_lock(&mutex); // Blokuj mutex przed utworzeniem wątku
                 int tmpLen = strlen(currentCar->cityName);
                 lastCity = (char*)malloc((tmpLen + 1) * sizeof(char));
