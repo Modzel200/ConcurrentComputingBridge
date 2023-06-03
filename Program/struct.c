@@ -4,12 +4,12 @@
 #include <stdbool.h>
 /**
  * @file
- * @brief Lista jednokierunkowa samochodów oraz metody do niej
+ * @brief Lista jednokierunkowa samochodÃ³w oraz metody do niej
  *
- * Plik z list¹ jednokierunkow¹, która przechowuje wszystkie utworzone przez nas samochody oraz metody do czyszczenia pamiêci/dodawania samochodu.
+ * Plik z listÄ… jednokierunkowÄ…, ktÃ³ra przechowuje wszystkie utworzone przez nas samochody oraz metody do czyszczenia pamiÄ™ci/dodawania samochodu.
  */
 /**@brief
-*   Struktura przechowywuj¹ca wszystkie samochody.
+*   Struktura przechowywujÄ…ca wszystkie samochody.
 */
 typedef struct Car {
     /**@brief
@@ -17,40 +17,40 @@ typedef struct Car {
     */
     int carId;
     /**@brief
-    *   Przechowuje ID w¹tku.
+    *   Przechowuje ID wÄ…tku.
     */
     long int threadId;
     /**@brief
-    *   Przechowuje wartoœæ boolean definiuj¹c¹ czy pojazd czeka na mo¿liwoœæ przejechania przez most.
+    *   Przechowuje wartoÅ›Ä‡ boolean definiujÄ…cÄ… czy pojazd czeka na moÅ¼liwoÅ›Ä‡ przejechania przez most.
     */
     bool isWaiting;
     /**@brief
-    *   Przechowuje nazwê miasta.
+    *   Przechowuje nazwÄ™ miasta.
     */
     char cityName[32];
     /**@brief
-    *   Przechowuje licznik, kiedy wartoœæ wyniesie 0, parametr isWaiting zmieni siê na true.
+    *   Przechowuje licznik, kiedy wartoÅ›Ä‡ wyniesie 0, parametr isWaiting zmieni siÄ™ na true.
     */
     int idleMeter;
     /**@brief
-    *   Przechowuje wskaŸnik na nastêpny pojazd b¹dŸ null jeœli jest to koniec listy.
+    *   Przechowuje wskaÅºnik na nastÄ™pny pojazd bÄ…dÅº null jeÅ›li jest to koniec listy.
     */
     struct Car * next;
 } Car_t;
 
 /**@brief
-*   Funkcja dodaj¹ca nowy pojazd do listy
+*   Funkcja dodajÄ…ca nowy pojazd do listy
 @param[in] carStart
-*   adres pocz¹tku listy
+*   adres poczÄ…tku listy
 @param[in] carId
 *   id pojazdu
 @param[in] threadId
-*   id w¹tku
+*   id wÄ…tku
 @param[in] cityName
 *   nazwa miasta
 @param[in] idleMeter
 *   licznik oczekiwania
-@retval '' Pusty return nie informuje o b³êdzie
+@retval '' Pusty return nie informuje o bÅ‚Ä™dzie
 */
 void addCar(Car_t **carStart, int carId, long int threadId, const char* cityName, int idleMeter){
     if(*carStart ==NULL){
@@ -77,10 +77,10 @@ void addCar(Car_t **carStart, int carId, long int threadId, const char* cityName
     return;
 }
 /**@brief
-*   Funkcja usuwaj¹ca listê
+*   Funkcja usuwajÄ…ca listÄ™
 @param[in] carStart
-*   adres pocz¹tku listy
-@retval '' Pusty return nie informuje o b³êdzie
+*   adres poczÄ…tku listy
+@retval '' Pusty return nie informuje o bÅ‚Ä™dzie
 */
 void deleteList(Car_t** carStart)
 {

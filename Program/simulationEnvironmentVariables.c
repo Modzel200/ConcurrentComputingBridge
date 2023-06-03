@@ -4,8 +4,19 @@
 #include <pthread.h>
 #include <time.h>
 #include<unistd.h>
+/**
+ * @file
+ * @brief Plik obsługujący symulację przejazdu samochodów przez wąski most przy użyciu zmiennych warunkowych
+ *
+ * Plik którego funkcje przydzielają dostęp dla jednego samochodu do przejazdu przez most oraz blokujący inne samochody.
+ */
 pthread_cond_t envVar = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t mutex;
+/**@brief
+*   Funkcja blokująca dostęp innych wątków do metody na czas przejazdu przez most
+@param[in] *car
+*   Znacznik do samochodu przejażdzącego przez most 
+*/
 void *onBridgeEnv(void *car)
 {
     Car_t *currentCar = (struct Car*)car;
@@ -15,7 +26,13 @@ void *onBridgeEnv(void *car)
     sleep(2);
     pthread_cond_signal(&envVar);
 }
-
+/**@brief
+*   Funkcja służąca do przemieszczania samochodów między miastami i zarządzająca dostępem do mostu
+@param[in] **cars
+*   Znacznik na pierwszy samochód z listy
+@param[in] numberOfThreads
+*   Ilość samochodów w mieście   
+*/
 void simulationEnvironmentVariables(Car_t **cars, int numberOfThreads)
 {
     pthread_mutex_init(&mutex,NULL);

@@ -7,7 +7,7 @@
 #include "draw.c"
 /**
  * @file
- * @brief Plik obsługujący symulację przejazdu samochodów przez wąski most
+ * @brief Plik obsługujący symulację przejazdu samochodów przez wąski most przy użyciu mutexów
  *
  * Plik którego funkcje przydzielają dostęp dla jednego samochodu do przejazdu przez most oraz blokujący inne samochody.
  */
