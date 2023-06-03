@@ -5,7 +5,20 @@
 #include <time.h>
 #include<unistd.h>
 #include "draw.c"
+/**
+ * @file
+ * @brief Plik obsługujący symulację przejazdu samochodów przez wąski most
+ *
+ * Plik którego funkcje przydzielają dostęp dla jednego samochodu do przejazdu przez most oraz blokujący inne samochody.
+ */
 pthread_mutex_t mutex;
+
+
+/**@brief
+*   Funkcja blokująca dostęp innych wątków do metody na czas przejazdu przez most
+@param[in] *car
+*   Znacznik do samochodu przejażdzącego przez most 
+*/
 void *onBridge(void *car) 
 {
     Car_t *currentCar = (struct Car*)car;
@@ -16,6 +29,14 @@ void *onBridge(void *car)
     pthread_mutex_unlock(&mutex);
 }
 
+
+/**@brief
+*   Funkcja służąca do przemieszczania samochodów między miastami i zarządzająca dostępem do mostu
+@param[in] **cars
+*   Znacznik na pierwszy samochód z listy
+@param[in] numberOfThreads
+*   Ilość samochodów w mieście   
+*/
 void simulation(Car_t **cars, int numberOfThreads)
 {
     pthread_mutex_init(&mutex,NULL);    

@@ -1,7 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+/**
+ * @file
+ * @brief Plik wyświetlający komunikaty o przejazdach samochodów.
+ *
+ * Plik którego funkcja służy do wyświetlania przemieszczenia samochodów w mieście
+ */
+/**@brief
+*   Funkcja sprawdza pozycję każdego samochodu w mieście i obsługuje wyświetlanie przejazdu przez most
+@param[in] *car
+*   Znacznik do pierwszego samochodu z listy
+@param[in] *lastcity
+*   Ostatnie miasto w jakim znajdował się samochód na moście
+*/
 void draw(Car_t *car, char *lastcity){
     Car_t *firstCar;  
     Car_t *currentCar;
