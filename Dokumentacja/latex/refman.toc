@@ -1,0 +1,75 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {polish}{}\relax 
+\contentsline {chapter}{\numberline {1}Strona główna dokumentacji}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Dokumentacja}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Realizacja zadania}{1}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Treść Zadania}{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Wykonane podpunkty}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Podpunkty}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Używając wyłącznie mutexy/semafory}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Wykorzystując zmienne warunkowe (condition variables)}{5}{subsection.3.1.2}%
+\contentsline {chapter}{\numberline {4}Instrukcja obsługi}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Kompilacja programu}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}gcc main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c -\/o program}{7}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Realizacja zadania}{7}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Ilość wątków(samochodów)}{7}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Rodzaj realizacji projektu}{7}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Przykłady}{7}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}./program 10 0}{7}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}./program 15 1}{7}{subsection.4.3.2}%
+\contentsline {chapter}{\numberline {5}Indeks struktur danych}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Struktury danych}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Indeks plików}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Lista plików}{11}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Dokumentacja struktur danych}{13}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Dokumentacja struktury Car}{13}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Opis szczegółowy}{13}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Dokumentacja pól}{13}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}carId}{13}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}cityName}{14}{subsubsection.7.1.2.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.3}idleMeter}{14}{subsubsection.7.1.2.3}%
+\contentsline {subsubsection}{\numberline {7.1.2.4}isWaiting}{14}{subsubsection.7.1.2.4}%
+\contentsline {subsubsection}{\numberline {7.1.2.5}next}{14}{subsubsection.7.1.2.5}%
+\contentsline {subsubsection}{\numberline {7.1.2.6}threadId}{14}{subsubsection.7.1.2.6}%
+\contentsline {chapter}{\numberline {8}Dokumentacja plików}{15}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Dokumentacja pliku Program/draw.c}{15}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Opis szczegółowy}{15}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Dokumentacja funkcji}{15}{subsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.2.1}draw()}{15}{subsubsection.8.1.2.1}%
+\contentsline {section}{\numberline {8.2}draw.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{16}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Dokumentacja pliku Program/main.c}{16}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Opis szczegółowy}{17}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Dokumentacja funkcji}{17}{subsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.2.1}main()}{17}{subsubsection.8.3.2.1}%
+\contentsline {subsection}{\numberline {8.3.3}Dokumentacja zmiennych}{17}{subsection.8.3.3}%
+\contentsline {subsubsection}{\numberline {8.3.3.1}variable}{17}{subsubsection.8.3.3.1}%
+\contentsline {section}{\numberline {8.4}Dokumentacja pliku Program/random.c}{17}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Dokumentacja funkcji}{18}{subsection.8.4.1}%
+\contentsline {subsubsection}{\numberline {8.4.1.1}randValue()}{18}{subsubsection.8.4.1.1}%
+\contentsline {section}{\numberline {8.5}random.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{18}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Dokumentacja pliku Program/simulation.c}{18}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Opis szczegółowy}{18}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Dokumentacja funkcji}{18}{subsection.8.6.2}%
+\contentsline {subsubsection}{\numberline {8.6.2.1}onBridge()}{18}{subsubsection.8.6.2.1}%
+\contentsline {subsubsection}{\numberline {8.6.2.2}simulation()}{19}{subsubsection.8.6.2.2}%
+\contentsline {subsection}{\numberline {8.6.3}Dokumentacja zmiennych}{19}{subsection.8.6.3}%
+\contentsline {subsubsection}{\numberline {8.6.3.1}mutex}{19}{subsubsection.8.6.3.1}%
+\contentsline {section}{\numberline {8.7}simulation.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{19}{section.8.7}%
+\contentsline {section}{\numberline {8.8}Dokumentacja pliku Program/simulation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Environment\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Variables.c}{20}{section.8.8}%
+\contentsline {subsection}{\numberline {8.8.1}Opis szczegółowy}{21}{subsection.8.8.1}%
+\contentsline {subsection}{\numberline {8.8.2}Dokumentacja funkcji}{21}{subsection.8.8.2}%
+\contentsline {subsubsection}{\numberline {8.8.2.1}onBridgeEnv()}{21}{subsubsection.8.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.8.2.2}simulationEnvironmentVariables()}{21}{subsubsection.8.8.2.2}%
+\contentsline {subsection}{\numberline {8.8.3}Dokumentacja zmiennych}{21}{subsection.8.8.3}%
+\contentsline {subsubsection}{\numberline {8.8.3.1}envVar}{21}{subsubsection.8.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.8.3.2}mutex}{22}{subsubsection.8.8.3.2}%
+\contentsline {section}{\numberline {8.9}simulation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Environment\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Variables.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{22}{section.8.9}%
+\contentsline {section}{\numberline {8.10}Dokumentacja pliku Program/struct.c}{23}{section.8.10}%
+\contentsline {subsection}{\numberline {8.10.1}Opis szczegółowy}{23}{subsection.8.10.1}%
+\contentsline {subsection}{\numberline {8.10.2}Dokumentacja definicji typów}{23}{subsection.8.10.2}%
+\contentsline {subsubsection}{\numberline {8.10.2.1}Car\_t}{23}{subsubsection.8.10.2.1}%
+\contentsline {subsection}{\numberline {8.10.3}Dokumentacja funkcji}{24}{subsection.8.10.3}%
+\contentsline {subsubsection}{\numberline {8.10.3.1}addCar()}{24}{subsubsection.8.10.3.1}%
+\contentsline {subsubsection}{\numberline {8.10.3.2}deleteList()}{24}{subsubsection.8.10.3.2}%
+\contentsline {section}{\numberline {8.11}struct.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{24}{section.8.11}%
+\contentsline {chapter}{Skorowidz}{27}{section*.13}%

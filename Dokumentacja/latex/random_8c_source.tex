@@ -1,0 +1,15 @@
+\doxysection{random.\+c}
+\hypertarget{random_8c_source}{}\label{random_8c_source}\index{Program/random.c@{Program/random.c}}
+\mbox{\hyperlink{random_8c}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{random_8c_a19560b9bf0a57fcd597a9e206969b7b2}{randValue}}\ ()\{}
+\DoxyCodeLine{00006\ \ \ \ \ srand(time(NULL));\ \ \ \textcolor{comment}{//\ Initialization,\ should\ only\ be\ called\ once.}}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ r\ =\ rand()\%5+1;\ \ \ \ \ \ \textcolor{comment}{//\ Returns\ a\ pseudo-\/random\ integer\ between\ 0\ and\ RAND\_MAX}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,120 @@
+\begin{theindex}
+
+  \item {addCar}
+    \subitem {struct.c}, \hyperpage{24}
+
+  \indexspace
+
+  \item {Car}, \hyperpage{13}
+    \subitem {carId}, \hyperpage{13}
+    \subitem {cityName}, \hyperpage{13}
+    \subitem {idleMeter}, \hyperpage{14}
+    \subitem {isWaiting}, \hyperpage{14}
+    \subitem {next}, \hyperpage{14}
+    \subitem {threadId}, \hyperpage{14}
+  \item {Car\_t}
+    \subitem {struct.c}, \hyperpage{23}
+  \item {carId}
+    \subitem {Car}, \hyperpage{13}
+  \item {cityName}
+    \subitem {Car}, \hyperpage{13}
+
+  \indexspace
+
+  \item {deleteList}
+    \subitem {struct.c}, \hyperpage{24}
+  \item {draw}
+    \subitem {draw.c}, \hyperpage{15}
+  \item {draw.c}
+    \subitem {draw}, \hyperpage{15}
+
+  \indexspace
+
+  \item {envVar}
+    \subitem {simulationEnvironmentVariables.c}, \hyperpage{21}
+
+  \indexspace
+
+  \item {idleMeter}
+    \subitem {Car}, \hyperpage{14}
+  \item {Instrukcja obsługi}, \hyperpage{7}
+  \item {isWaiting}
+    \subitem {Car}, \hyperpage{14}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.c}, \hyperpage{17}
+  \item {main.c}
+    \subitem {main}, \hyperpage{17}
+    \subitem {variable}, \hyperpage{17}
+  \item {mutex}
+    \subitem {simulation.c}, \hyperpage{19}
+    \subitem {simulationEnvironmentVariables.c}, \hyperpage{21}
+
+  \indexspace
+
+  \item {next}
+    \subitem {Car}, \hyperpage{14}
+
+  \indexspace
+
+  \item {onBridge}
+    \subitem {simulation.c}, \hyperpage{18}
+  \item {onBridgeEnv}
+    \subitem {simulationEnvironmentVariables.c}, \hyperpage{21}
+
+  \indexspace
+
+  \item {Program/draw.c}, \hyperpage{15, 16}
+  \item {Program/main.c}, \hyperpage{16}
+  \item {Program/random.c}, \hyperpage{17, 18}
+  \item {Program/simulation.c}, \hyperpage{18, 19}
+  \item {Program/simulationEnvironmentVariables.c}, \hyperpage{20}, 
+		\hyperpage{22}
+  \item {Program/struct.c}, \hyperpage{23, 24}
+
+  \indexspace
+
+  \item {random.c}
+    \subitem {randValue}, \hyperpage{18}
+  \item {randValue}
+    \subitem {random.c}, \hyperpage{18}
+
+  \indexspace
+
+  \item {simulation}
+    \subitem {simulation.c}, \hyperpage{19}
+  \item {simulation.c}
+    \subitem {mutex}, \hyperpage{19}
+    \subitem {onBridge}, \hyperpage{18}
+    \subitem {simulation}, \hyperpage{19}
+  \item {simulationEnvironmentVariables}
+    \subitem {simulationEnvironmentVariables.c}, \hyperpage{21}
+  \item {simulationEnvironmentVariables.c}
+    \subitem {envVar}, \hyperpage{21}
+    \subitem {mutex}, \hyperpage{21}
+    \subitem {onBridgeEnv}, \hyperpage{21}
+    \subitem {simulationEnvironmentVariables}, \hyperpage{21}
+  \item {Strona główna dokumentacji}, \hyperpage{1}
+  \item {struct.c}
+    \subitem {addCar}, \hyperpage{24}
+    \subitem {Car\_t}, \hyperpage{23}
+    \subitem {deleteList}, \hyperpage{24}
+
+  \indexspace
+
+  \item {threadId}
+    \subitem {Car}, \hyperpage{14}
+  \item {Treść Zadania}, \hyperpage{3}
+
+  \indexspace
+
+  \item {variable}
+    \subitem {main.c}, \hyperpage{17}
+
+  \indexspace
+
+  \item {Wykonane podpunkty}, \hyperpage{5}
+
+\end{theindex}

@@ -1,0 +1,39 @@
+\doxysection{draw.\+c}
+\hypertarget{draw_8c_source}{}\label{draw_8c_source}\index{Program/draw.c@{Program/draw.c}}
+\mbox{\hyperlink{draw_8c}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8c_af8931c6dfc042f9c682c77d7d151a136}{draw}}(\mbox{\hyperlink{struct_car}{Car\_t}}\ *car,\ \textcolor{keywordtype}{char}\ *lastcity)\{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{struct_car}{Car\_t}}\ *firstCar;\ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{struct_car}{Car\_t}}\ *currentCar;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ napis[4]\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00021\ \ \ \ \ currentCar=car;}
+\DoxyCodeLine{00022\ \ \ \ \ firstCar\ =car;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ inA,\ inB,\ WaitA,\ WaitB;}
+\DoxyCodeLine{00024\ \ \ \ \ inA=inB=WaitA=WaitB=0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{while}(currentCar!=NULL)\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}CityA"{}})==0\ \&\&\ currentCar-\/>\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}}!=0)\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ inA++;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(strcmp(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}CityA"{}})==0\ \&\&\ currentCar-\/>\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}}==0)\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ WaitA++;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(strcmp(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}CityB"{}})==0\ \&\&\ currentCar-\/>\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}}==0)\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ WaitB++;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(strcmp(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}CityB"{}})==0\&\&currentCar-\/>\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}}!=0)\{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ inB++;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}Bridge"{}})==0)\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ firstCar=currentCar;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(lastcity,\textcolor{stringliteral}{"{}CityA"{}})==0)\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(napis,\textcolor{stringliteral}{"{}>>>"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(napis,\textcolor{stringliteral}{"{}<<<"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ currentCar=currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}};}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ printf(\textcolor{stringliteral}{"{}A=\%d\ \%d\ >>>\ [\%s\ \%d\ \%s]\ <<<\ \%d\ \%d=B\(\backslash\)n"{}},inA,WaitA,napis,firstCar-\/>\mbox{\hyperlink{struct_car_a521524031c35b78a737dc3657156f5f1}{carId}},napis,WaitB,inB);}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}

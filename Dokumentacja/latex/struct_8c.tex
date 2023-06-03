@@ -1,0 +1,97 @@
+\doxysection{Dokumentacja pliku Program/struct.c}
+\hypertarget{struct_8c}{}\label{struct_8c}\index{Program/struct.c@{Program/struct.c}}
+
+
+Lista jednokierunkowa samochodów oraz metody do niej.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Struktury danych}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_car}{Car}}
+\begin{DoxyCompactList}\small\item\em Struktura przechowywująca wszystkie samochody. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Definicje typów}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_car}{Car}} \mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Struktura przechowywująca wszystkie samochody. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_8c_a8638752808ac6f2cfa8f191ce9cd23b8}{add\+Car}} (\mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}car\+Start, int car\+Id, long int thread\+Id, const char \texorpdfstring{$\ast$}{*}city\+Name, int idle\+Meter)
+\begin{DoxyCompactList}\small\item\em Funkcja dodająca nowy pojazd do listy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_8c_a74acf9685b70fab408c0f09399889f5a}{delete\+List}} (\mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}car\+Start)
+\begin{DoxyCompactList}\small\item\em Funkcja usuwająca listę \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Lista jednokierunkowa samochodów oraz metody do niej. 
+
+Plik z listą jednokierunkową, która przechowuje wszystkie utworzone przez nas samochody oraz metody do czyszczenia pamięci/dodawania samochodu. 
+
+\doxysubsection{Dokumentacja definicji typów}
+\Hypertarget{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}\label{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2} 
+\index{struct.c@{struct.c}!Car\_t@{Car\_t}}
+\index{Car\_t@{Car\_t}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{Car\_t}{Car\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_car}{Car}} \mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\+\_\+t}}}
+
+
+
+Struktura przechowywująca wszystkie samochody. 
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{struct_8c_a8638752808ac6f2cfa8f191ce9cd23b8}\label{struct_8c_a8638752808ac6f2cfa8f191ce9cd23b8} 
+\index{struct.c@{struct.c}!addCar@{addCar}}
+\index{addCar@{addCar}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{addCar()}{addCar()}}
+{\footnotesize\ttfamily void add\+Car (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{car\+Start,  }\item[{int}]{car\+Id,  }\item[{long int}]{thread\+Id,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{city\+Name,  }\item[{int}]{idle\+Meter }\end{DoxyParamCaption})}
+
+
+
+Funkcja dodająca nowy pojazd do listy. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in}}  & {\em car\+Start} & adres początku listy \\
+\hline
+\mbox{\texttt{ in}}  & {\em car\+Id} & id pojazdu \\
+\hline
+\mbox{\texttt{ in}}  & {\em thread\+Id} & id wątku \\
+\hline
+\mbox{\texttt{ in}}  & {\em city\+Name} & nazwa miasta \\
+\hline
+\mbox{\texttt{ in}}  & {\em idle\+Meter} & licznik oczekiwania \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em \textquotesingle{}\textquotesingle{}} & Pusty return nie informuje o błędzie \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{struct_8c_a74acf9685b70fab408c0f09399889f5a}\label{struct_8c_a74acf9685b70fab408c0f09399889f5a} 
+\index{struct.c@{struct.c}!deleteList@{deleteList}}
+\index{deleteList@{deleteList}!struct.c@{struct.c}}
+\doxysubsubsection{\texorpdfstring{deleteList()}{deleteList()}}
+{\footnotesize\ttfamily void delete\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{car\+Start }\end{DoxyParamCaption})}
+
+
+
+Funkcja usuwająca listę 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in}}  & {\em car\+Start} & adres początku listy \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em \textquotesingle{}\textquotesingle{}} & Pusty return nie informuje o błędzie \\
+\hline
+\end{DoxyRetVals}

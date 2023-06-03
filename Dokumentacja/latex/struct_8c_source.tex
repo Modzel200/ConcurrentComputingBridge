@@ -1,0 +1,65 @@
+\doxysection{struct.\+c}
+\hypertarget{struct_8c_source}{}\label{struct_8c_source}\index{Program/struct.c@{Program/struct.c}}
+\mbox{\hyperlink{struct_8c}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_car}{Car}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_car_a521524031c35b78a737dc3657156f5f1}{carId}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_car_abb4253ba6777e73270598d1e67cd5b3d}{threadId}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_car_a1e2abb81a8e1b0347d38032e9679e6e9}{isWaiting}};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}}[32];}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_car}{Car}}\ *\ \mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}};}
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\_t}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_8c_a8638752808ac6f2cfa8f191ce9cd23b8}{addCar}}(\mbox{\hyperlink{struct_car}{Car\_t}}\ **carStart,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_car_a521524031c35b78a737dc3657156f5f1}{carId}},\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_car_abb4253ba6777e73270598d1e67cd5b3d}{threadId}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}})\{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}(*carStart\ ==NULL)\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ *carStart\ =\ (\mbox{\hyperlink{struct_car}{Car\_t}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_car}{Car\_t}}));}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ (*carStart)-\/>\mbox{\hyperlink{struct_car_a521524031c35b78a737dc3657156f5f1}{carId}}\ =\ \mbox{\hyperlink{struct_car_a521524031c35b78a737dc3657156f5f1}{carId}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ (*carStart)-\/>threadId\ =\ \mbox{\hyperlink{struct_car_abb4253ba6777e73270598d1e67cd5b3d}{threadId}};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ (*carStart)-\/>isWaiting\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ strcpy((*carStart)-\/>cityName,\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ (*carStart)-\/>idleMeter\ =\ \mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ (*carStart)-\/>next\ =\ NULL;}
+\DoxyCodeLine{00064\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_car}{Car\_t}}\ *currentCar\ =\ *carStart;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}!=NULL)\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ currentCar=currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}\ =\ (\mbox{\hyperlink{struct_car}{Car\_t}}\ *)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_car}{Car\_t}}));}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}-\/>\mbox{\hyperlink{struct_car_a521524031c35b78a737dc3657156f5f1}{carId}}\ =\ \mbox{\hyperlink{struct_car_a521524031c35b78a737dc3657156f5f1}{carId}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}-\/>\mbox{\hyperlink{struct_car_abb4253ba6777e73270598d1e67cd5b3d}{threadId}}\ =\ \mbox{\hyperlink{struct_car_abb4253ba6777e73270598d1e67cd5b3d}{threadId}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}-\/>\mbox{\hyperlink{struct_car_a1e2abb81a8e1b0347d38032e9679e6e9}{isWaiting}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ strcpy(currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}-\/>\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}}=\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}=NULL;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_8c_a74acf9685b70fab408c0f09399889f5a}{deleteList}}(\mbox{\hyperlink{struct_car}{Car\_t}}**\ carStart)}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{struct_car}{Car\_t}}*\ currentCar\ =\ (*carStart);}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{struct_car}{Car\_t}}*\ nextNode;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{while}\ (currentCar\ !=\ NULL)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ nextNode\ =\ currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ free(currentCar);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ currentCar\ =\ nextNode;}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ *carStart\ =\ NULL;}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{/*int\ printAllCars(Car\_t\ *carStart)\{}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ \ \ \ Car\_t*\ currentCar\ =\ carStart;}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ \ \ \ while(currentCar!=NULL)\{}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ printf("{}ID:\ \%d,\ Thread:\ \%ld,\ Is\ he\ waiting:\ \%d,\ It's\ city:\ \%s,\ Idling\ for:\ \%d\(\backslash\)n"{},currentCar-\/>carId,currentCar-\/>threadId,currentCar-\/>isWaiting,currentCar-\/>cityName,currentCar-\/>idleMeter);}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ \ \ \ \ currentCar\ =\ currentCar-\/>next;}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ \ \ \ printf("{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{});}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ \ return\ 1;}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\}*/}}
+\DoxyCodeLine{00106\ }
+
+\end{DoxyCode}

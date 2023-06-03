@@ -1,0 +1,89 @@
+\doxysection{simulation.\+c}
+\hypertarget{simulation_8c_source}{}\label{simulation_8c_source}\index{Program/simulation.c@{Program/simulation.c}}
+\mbox{\hyperlink{simulation_8c}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <pthread.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<unistd.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{draw_8c}{draw.c}}"{}}}
+\DoxyCodeLine{00014\ pthread\_mutex\_t\ \mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{simulation_8c_aa55b66a2137bed334e8e6b617b2f7209}{onBridge}}(\textcolor{keywordtype}{void}\ *car)\ }
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{struct_car}{Car\_t}}\ *currentCar\ =\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_car}{Car}}*)car;}
+\DoxyCodeLine{00025\ \ \ \ \ pthread\_mutex\_lock(\&\mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}});}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//printf("{}Jestem\ na\ moście\ moje\ id\ to:\ \%ld\(\backslash\)n"{},selfThread);}}
+\DoxyCodeLine{00027\ \ \ \ \ strcpy(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}Bridge"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ sleep(2);}
+\DoxyCodeLine{00029\ \ \ \ \ pthread\_mutex\_unlock(\&\mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}});}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{simulation_8c_a1f9030350a8f2f129b3a78d735f3bc5d}{simulation}}(\mbox{\hyperlink{struct_car}{Car\_t}}\ **cars,\ \textcolor{keywordtype}{int}\ numberOfThreads)}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ pthread\_mutex\_init(\&\mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}},NULL);\ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{struct_car}{Car\_t}}\ *currentCar;}
+\DoxyCodeLine{00044\ \ \ \ \ pthread\_t\ *listOfThreads;}
+\DoxyCodeLine{00045\ \ \ \ \ listOfThreads\ =\ calloc(numberOfThreads,\textcolor{keyword}{sizeof}(pthread\_t));}
+\DoxyCodeLine{00046\ \ \ \ \ currentCar=*cars;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{char}\ *lastCity;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ i=0;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printAllCars(*cars);}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ currentCar=*cars;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(currentCar!=NULL)\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(currentCar-\/>\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}}==0)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentCar-\/>\mbox{\hyperlink{struct_car_a1e2abb81a8e1b0347d38032e9679e6e9}{isWaiting}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentCar-\/>\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}}=currentCar-\/>\mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idleMeter}}-\/1;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(currentCar-\/>\mbox{\hyperlink{struct_car_a1e2abb81a8e1b0347d38032e9679e6e9}{isWaiting}}==\textcolor{keyword}{true})}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw_8c_af8931c6dfc042f9c682c77d7d151a136}{draw}}(*cars,lastCity);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pthread\_mutex\_lock(\&\mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}});\ \textcolor{comment}{//\ Blokuj\ mutex\ przed\ utworzeniem\ wątku}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmpLen\ =\ strlen(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastCity\ =\ (\textcolor{keywordtype}{char}*)malloc((tmpLen\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(lastCity,\ currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pthread\_mutex\_unlock(\&\mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}});\ \textcolor{comment}{//\ Odblokuj\ mutex\ po\ utworzeniu\ wątku}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pthread\_create(\&listOfThreads[i],\ NULL,\ \mbox{\hyperlink{simulation_8c_aa55b66a2137bed334e8e6b617b2f7209}{onBridge}},\ (\textcolor{keywordtype}{void}*)currentCar);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pthread\_join(listOfThreads[i],\ NULL);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pthread\_mutex\_lock(\&\mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}});\ \textcolor{comment}{//\ Blokuj\ mutex\ przed\ aktualizacją\ danych}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentCar-\/>threadId=listOfThreads[i];}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentCar-\/>idleMeter\ =\ rand()\ \%\ 5\ +\ 1;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentCar-\/>isWaiting\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pthread\_mutex\_unlock(\&\mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}});\ \textcolor{comment}{//\ Odblokuj\ mutex\ po\ aktualizacji\ danych}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}Bridge"{}})==0)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw_8c_af8931c6dfc042f9c682c77d7d151a136}{draw}}(*cars,lastCity);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(lastCity,\textcolor{stringliteral}{"{}CityA"{}})==0)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}CityB"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(currentCar-\/>\mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{cityName}},\textcolor{stringliteral}{"{}CityA"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(lastCity);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ currentCar\ =\ currentCar-\/>\mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ sleep(2);}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ pthread\_mutex\_destroy(\&\mbox{\hyperlink{simulation_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}});}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}

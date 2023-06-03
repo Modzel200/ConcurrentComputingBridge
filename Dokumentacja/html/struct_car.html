@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Programowanie współbieżne: Dokumentacja struktury Car</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="obraz.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Programowanie współbieżne<span id="projectnumber">&#160;1.1</span>
+   </div>
+   <div id="projectbrief">Wąski most</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Pola danych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja struktury Car</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Struktura przechowywująca wszystkie samochody.  
+ <a href="struct_car.html#details">Więcej...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Pola danych</h2></td></tr>
+<tr class="memitem:a521524031c35b78a737dc3657156f5f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_car.html#a521524031c35b78a737dc3657156f5f1">carId</a></td></tr>
+<tr class="memdesc:a521524031c35b78a737dc3657156f5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechowuje ID pojazdu.  <br /></td></tr>
+<tr class="separator:a521524031c35b78a737dc3657156f5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb4253ba6777e73270598d1e67cd5b3d"><td class="memItemLeft" align="right" valign="top">long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_car.html#abb4253ba6777e73270598d1e67cd5b3d">threadId</a></td></tr>
+<tr class="memdesc:abb4253ba6777e73270598d1e67cd5b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechowuje ID wątku.  <br /></td></tr>
+<tr class="separator:abb4253ba6777e73270598d1e67cd5b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2abb81a8e1b0347d38032e9679e6e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_car.html#a1e2abb81a8e1b0347d38032e9679e6e9">isWaiting</a></td></tr>
+<tr class="memdesc:a1e2abb81a8e1b0347d38032e9679e6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechowuje wartość boolean definiującą czy pojazd czeka na możliwość przejechania przez most.  <br /></td></tr>
+<tr class="separator:a1e2abb81a8e1b0347d38032e9679e6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7e7b043acfe600e34adf0b55109616"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_car.html#a2d7e7b043acfe600e34adf0b55109616">cityName</a> [32]</td></tr>
+<tr class="memdesc:a2d7e7b043acfe600e34adf0b55109616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechowuje nazwę miasta.  <br /></td></tr>
+<tr class="separator:a2d7e7b043acfe600e34adf0b55109616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a016175ce1b7ddbd8b844b535f1f5f10a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_car.html#a016175ce1b7ddbd8b844b535f1f5f10a">idleMeter</a></td></tr>
+<tr class="memdesc:a016175ce1b7ddbd8b844b535f1f5f10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechowuje licznik, kiedy wartość wyniesie 0, parametr isWaiting zmieni się na true.  <br /></td></tr>
+<tr class="separator:a016175ce1b7ddbd8b844b535f1f5f10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f637d7675b048d76084421c533ffaf"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_car.html">Car</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_car.html#a16f637d7675b048d76084421c533ffaf">next</a></td></tr>
+<tr class="memdesc:a16f637d7675b048d76084421c533ffaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechowuje wskaźnik na następny pojazd bądź null jeśli jest to koniec listy.  <br /></td></tr>
+<tr class="separator:a16f637d7675b048d76084421c533ffaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Struktura przechowywująca wszystkie samochody. </p>
+</div><h2 class="groupheader">Dokumentacja pól</h2>
+<a id="a521524031c35b78a737dc3657156f5f1" name="a521524031c35b78a737dc3657156f5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a521524031c35b78a737dc3657156f5f1">&#9670;&#160;</a></span>carId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int carId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przechowuje ID pojazdu. </p>
+
+</div>
+</div>
+<a id="a2d7e7b043acfe600e34adf0b55109616" name="a2d7e7b043acfe600e34adf0b55109616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d7e7b043acfe600e34adf0b55109616">&#9670;&#160;</a></span>cityName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char cityName[32]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przechowuje nazwę miasta. </p>
+
+</div>
+</div>
+<a id="a016175ce1b7ddbd8b844b535f1f5f10a" name="a016175ce1b7ddbd8b844b535f1f5f10a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016175ce1b7ddbd8b844b535f1f5f10a">&#9670;&#160;</a></span>idleMeter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int idleMeter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przechowuje licznik, kiedy wartość wyniesie 0, parametr isWaiting zmieni się na true. </p>
+
+</div>
+</div>
+<a id="a1e2abb81a8e1b0347d38032e9679e6e9" name="a1e2abb81a8e1b0347d38032e9679e6e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2abb81a8e1b0347d38032e9679e6e9">&#9670;&#160;</a></span>isWaiting</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isWaiting</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przechowuje wartość boolean definiującą czy pojazd czeka na możliwość przejechania przez most. </p>
+
+</div>
+</div>
+<a id="a16f637d7675b048d76084421c533ffaf" name="a16f637d7675b048d76084421c533ffaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f637d7675b048d76084421c533ffaf">&#9670;&#160;</a></span>next</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_car.html">Car</a>* next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przechowuje wskaźnik na następny pojazd bądź null jeśli jest to koniec listy. </p>
+
+</div>
+</div>
+<a id="abb4253ba6777e73270598d1e67cd5b3d" name="abb4253ba6777e73270598d1e67cd5b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb4253ba6777e73270598d1e67cd5b3d">&#9670;&#160;</a></span>threadId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long int threadId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przechowuje ID wątku. </p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej struktury została wygenerowana z pliku:<ul>
+<li>Program/<a class="el" href="struct_8c_source.html">struct.c</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

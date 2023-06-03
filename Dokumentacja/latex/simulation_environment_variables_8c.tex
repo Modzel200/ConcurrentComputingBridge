@@ -1,0 +1,82 @@
+\doxysection{Dokumentacja pliku Program/simulation\+Environment\+Variables.c}
+\hypertarget{simulation_environment_variables_8c}{}\label{simulation_environment_variables_8c}\index{Program/simulationEnvironmentVariables.c@{Program/simulationEnvironmentVariables.c}}
+
+
+Plik obsługujący symulację przejazdu samochodów przez wąski most przy użyciu zmiennych warunkowych.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simulation_environment_variables_8c_a67dc5e3167bb9cd7dc20c15415e0db14}{on\+Bridge\+Env}} (void \texorpdfstring{$\ast$}{*}car)
+\begin{DoxyCompactList}\small\item\em Funkcja blokująca dostęp innych wątków do metody na czas przejazdu przez most. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{simulation_environment_variables_8c_a1c15a8729cb9dc8c3c4eb67285d40ceb}{simulation\+Environment\+Variables}} (\mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}cars, int number\+Of\+Threads)
+\begin{DoxyCompactList}\small\item\em Funkcja służąca do przemieszczania samochodów między miastami i zarządzająca dostępem do mostu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+cond\+\_\+t \mbox{\hyperlink{simulation_environment_variables_8c_afdeaa6e9bcdc15825d923b964176cb03}{env\+Var}} = PTHREAD\+\_\+\+COND\+\_\+\+INITIALIZER
+\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{simulation_environment_variables_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Plik obsługujący symulację przejazdu samochodów przez wąski most przy użyciu zmiennych warunkowych. 
+
+Plik którego funkcje przydzielają dostęp dla jednego samochodu do przejazdu przez most oraz blokujący inne samochody. 
+
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{simulation_environment_variables_8c_a67dc5e3167bb9cd7dc20c15415e0db14}\label{simulation_environment_variables_8c_a67dc5e3167bb9cd7dc20c15415e0db14} 
+\index{simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}!onBridgeEnv@{onBridgeEnv}}
+\index{onBridgeEnv@{onBridgeEnv}!simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}}
+\doxysubsubsection{\texorpdfstring{onBridgeEnv()}{onBridgeEnv()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} on\+Bridge\+Env (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{car }\end{DoxyParamCaption})}
+
+
+
+Funkcja blokująca dostęp innych wątków do metody na czas przejazdu przez most. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in}}  & {\em \texorpdfstring{$\ast$}{*}car} & Znacznik do samochodu przejażdzącego przez most \\
+\hline
+\end{DoxyParams}
+\Hypertarget{simulation_environment_variables_8c_a1c15a8729cb9dc8c3c4eb67285d40ceb}\label{simulation_environment_variables_8c_a1c15a8729cb9dc8c3c4eb67285d40ceb} 
+\index{simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}!simulationEnvironmentVariables@{simulationEnvironmentVariables}}
+\index{simulationEnvironmentVariables@{simulationEnvironmentVariables}!simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}}
+\doxysubsubsection{\texorpdfstring{simulationEnvironmentVariables()}{simulationEnvironmentVariables()}}
+{\footnotesize\ttfamily void simulation\+Environment\+Variables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_8c_a7f621d30d334f4bfb79c315c3eb6f4f2}{Car\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{cars,  }\item[{int}]{number\+Of\+Threads }\end{DoxyParamCaption})}
+
+
+
+Funkcja służąca do przemieszczania samochodów między miastami i zarządzająca dostępem do mostu. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in}}  & {\em \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}cars} & Znacznik na pierwszy samochód z listy \\
+\hline
+\mbox{\texttt{ in}}  & {\em number\+Of\+Threads} & Ilość samochodów w mieście ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{simulation_environment_variables_8c_afdeaa6e9bcdc15825d923b964176cb03}\label{simulation_environment_variables_8c_afdeaa6e9bcdc15825d923b964176cb03} 
+\index{simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}!envVar@{envVar}}
+\index{envVar@{envVar}!simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}}
+\doxysubsubsection{\texorpdfstring{envVar}{envVar}}
+{\footnotesize\ttfamily pthread\+\_\+cond\+\_\+t env\+Var = PTHREAD\+\_\+\+COND\+\_\+\+INITIALIZER}
+
+\Hypertarget{simulation_environment_variables_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{simulation_environment_variables_8c_a4acff8232e4aec9cd5c6dc200ac55ef3} 
+\index{simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}!mutex@{mutex}}
+\index{mutex@{mutex}!simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t mutex}
+

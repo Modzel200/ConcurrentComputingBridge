@@ -1,0 +1,10 @@
+\chapter{Treść Zadania}
+\hypertarget{page1}{}\label{page1}\index{Treść Zadania@{Treść Zadania}}
+{\bfseries{Projekt 2 -\/ wąski most}}~\newline
+ Wąski most. Z miasta A do miasta B prowadzi droga, na której znajduje się wąski most umożliwiający tylko ruch jednokierunkowy. Most jest również dość słaby, także może po nim przejeżdżać tylko jeden samochód na raz. Napisać program w którym N samochodów (wątków) będzie nieustannie przejeżdżało z miasta do miasta, pokonując po drodze most (N przekazywane jako argument linii poleceń). Zsynchronizuj dostęp wątków do mostu\+:~\newline
+ a) nie wykorzystując zmiennych warunkowych (tylko mutexy/semafory) \mbox{[}17p\mbox{]}~\newline
+ b) wykorzystując zmienne warunkowe (condition variables) \mbox{[}17p\mbox{]} ~\newline
+ Aby móc obserwować działanie programu, każdemu samochodowi przydziel numer. Program powinien wypisywać komunikaty według poniższego przykładu\+:~\newline
+ A-\/5 10\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \mbox{[}\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 4 \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}\mbox{]} \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4 6-\/B~\newline
+ Oznacza to, że po stronie miasta A jest 15 samochodów z czego 10 czeka w kolejce przed mostem, przez most przejeżdża samochód z numerem 4 z miasta A do B, po stronie miasta B jest 10 samochodów, z czego 4 oczekują w kolejce przed mostem. Komunikat należy wypisywać w momencie, kiedy w programie zmieni się którakolwiek z tych wartości. ~\newline
+ W celu sprawdzenia wykonanych podpunktów proszę udać się pod \doxysectlink{page2}{Wykonane podpunkty}{0}. 

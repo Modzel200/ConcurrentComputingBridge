@@ -1,0 +1,93 @@
+\doxysection{Dokumentacja struktury Car}
+\hypertarget{struct_car}{}\label{struct_car}\index{Car@{Car}}
+
+
+Struktura przechowywująca wszystkie samochody.  
+
+
+\doxysubsubsection*{Pola danych}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_car_a521524031c35b78a737dc3657156f5f1}{car\+Id}}
+\begin{DoxyCompactList}\small\item\em Przechowuje ID pojazdu. \end{DoxyCompactList}\item 
+long int \mbox{\hyperlink{struct_car_abb4253ba6777e73270598d1e67cd5b3d}{thread\+Id}}
+\begin{DoxyCompactList}\small\item\em Przechowuje ID wątku. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_car_a1e2abb81a8e1b0347d38032e9679e6e9}{is\+Waiting}}
+\begin{DoxyCompactList}\small\item\em Przechowuje wartość boolean definiującą czy pojazd czeka na możliwość przejechania przez most. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{struct_car_a2d7e7b043acfe600e34adf0b55109616}{city\+Name}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Przechowuje nazwę miasta. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}{idle\+Meter}}
+\begin{DoxyCompactList}\small\item\em Przechowuje licznik, kiedy wartość wyniesie 0, parametr is\+Waiting zmieni się na true. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_car}{Car}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_car_a16f637d7675b048d76084421c533ffaf}{next}}
+\begin{DoxyCompactList}\small\item\em Przechowuje wskaźnik na następny pojazd bądź null jeśli jest to koniec listy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Struktura przechowywująca wszystkie samochody. 
+
+\doxysubsection{Dokumentacja pól}
+\Hypertarget{struct_car_a521524031c35b78a737dc3657156f5f1}\label{struct_car_a521524031c35b78a737dc3657156f5f1} 
+\index{Car@{Car}!carId@{carId}}
+\index{carId@{carId}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{carId}{carId}}
+{\footnotesize\ttfamily int car\+Id}
+
+
+
+Przechowuje ID pojazdu. 
+
+\Hypertarget{struct_car_a2d7e7b043acfe600e34adf0b55109616}\label{struct_car_a2d7e7b043acfe600e34adf0b55109616} 
+\index{Car@{Car}!cityName@{cityName}}
+\index{cityName@{cityName}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{cityName}{cityName}}
+{\footnotesize\ttfamily char city\+Name\mbox{[}32\mbox{]}}
+
+
+
+Przechowuje nazwę miasta. 
+
+\Hypertarget{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a}\label{struct_car_a016175ce1b7ddbd8b844b535f1f5f10a} 
+\index{Car@{Car}!idleMeter@{idleMeter}}
+\index{idleMeter@{idleMeter}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{idleMeter}{idleMeter}}
+{\footnotesize\ttfamily int idle\+Meter}
+
+
+
+Przechowuje licznik, kiedy wartość wyniesie 0, parametr is\+Waiting zmieni się na true. 
+
+\Hypertarget{struct_car_a1e2abb81a8e1b0347d38032e9679e6e9}\label{struct_car_a1e2abb81a8e1b0347d38032e9679e6e9} 
+\index{Car@{Car}!isWaiting@{isWaiting}}
+\index{isWaiting@{isWaiting}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{isWaiting}{isWaiting}}
+{\footnotesize\ttfamily bool is\+Waiting}
+
+
+
+Przechowuje wartość boolean definiującą czy pojazd czeka na możliwość przejechania przez most. 
+
+\Hypertarget{struct_car_a16f637d7675b048d76084421c533ffaf}\label{struct_car_a16f637d7675b048d76084421c533ffaf} 
+\index{Car@{Car}!next@{next}}
+\index{next@{next}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_car}{Car}}\texorpdfstring{$\ast$}{*} next}
+
+
+
+Przechowuje wskaźnik na następny pojazd bądź null jeśli jest to koniec listy. 
+
+\Hypertarget{struct_car_abb4253ba6777e73270598d1e67cd5b3d}\label{struct_car_abb4253ba6777e73270598d1e67cd5b3d} 
+\index{Car@{Car}!threadId@{threadId}}
+\index{threadId@{threadId}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{threadId}{threadId}}
+{\footnotesize\ttfamily long int thread\+Id}
+
+
+
+Przechowuje ID wątku. 
+
+
+
+Dokumentacja dla tej struktury została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+Program/\mbox{\hyperlink{struct_8c}{struct.\+c}}\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\indexentry{Strona główna dokumentacji@{Strona główna dokumentacji}|hyperpage}{1}
+\indexentry{Treść Zadania@{Treść Zadania}|hyperpage}{3}
+\indexentry{Wykonane podpunkty@{Wykonane podpunkty}|hyperpage}{5}
+\indexentry{Instrukcja obsługi@{Instrukcja obsługi}|hyperpage}{7}
+\indexentry{Car@{Car}|hyperpage}{13}
+\indexentry{Car@{Car}!carId@{carId}|hyperpage}{13}
+\indexentry{carId@{carId}!Car@{Car}|hyperpage}{13}
+\indexentry{Car@{Car}!cityName@{cityName}|hyperpage}{13}
+\indexentry{cityName@{cityName}!Car@{Car}|hyperpage}{13}
+\indexentry{Car@{Car}!idleMeter@{idleMeter}|hyperpage}{14}
+\indexentry{idleMeter@{idleMeter}!Car@{Car}|hyperpage}{14}
+\indexentry{Car@{Car}!isWaiting@{isWaiting}|hyperpage}{14}
+\indexentry{isWaiting@{isWaiting}!Car@{Car}|hyperpage}{14}
+\indexentry{Car@{Car}!next@{next}|hyperpage}{14}
+\indexentry{next@{next}!Car@{Car}|hyperpage}{14}
+\indexentry{Car@{Car}!threadId@{threadId}|hyperpage}{14}
+\indexentry{threadId@{threadId}!Car@{Car}|hyperpage}{14}
+\indexentry{Program/draw.c@{Program/draw.c}|hyperpage}{15}
+\indexentry{draw.c@{draw.c}!draw@{draw}|hyperpage}{15}
+\indexentry{draw@{draw}!draw.c@{draw.c}|hyperpage}{15}
+\indexentry{Program/draw.c@{Program/draw.c}|hyperpage}{16}
+\indexentry{Program/main.c@{Program/main.c}|hyperpage}{16}
+\indexentry{main.c@{main.c}!main@{main}|hyperpage}{17}
+\indexentry{main@{main}!main.c@{main.c}|hyperpage}{17}
+\indexentry{main.c@{main.c}!variable@{variable}|hyperpage}{17}
+\indexentry{variable@{variable}!main.c@{main.c}|hyperpage}{17}
+\indexentry{Program/random.c@{Program/random.c}|hyperpage}{17}
+\indexentry{random.c@{random.c}!randValue@{randValue}|hyperpage}{18}
+\indexentry{randValue@{randValue}!random.c@{random.c}|hyperpage}{18}
+\indexentry{Program/random.c@{Program/random.c}|hyperpage}{18}
+\indexentry{Program/simulation.c@{Program/simulation.c}|hyperpage}{18}
+\indexentry{simulation.c@{simulation.c}!onBridge@{onBridge}|hyperpage}{18}
+\indexentry{onBridge@{onBridge}!simulation.c@{simulation.c}|hyperpage}{18}
+\indexentry{simulation.c@{simulation.c}!simulation@{simulation}|hyperpage}{19}
+\indexentry{simulation@{simulation}!simulation.c@{simulation.c}|hyperpage}{19}
+\indexentry{simulation.c@{simulation.c}!mutex@{mutex}|hyperpage}{19}
+\indexentry{mutex@{mutex}!simulation.c@{simulation.c}|hyperpage}{19}
+\indexentry{Program/simulation.c@{Program/simulation.c}|hyperpage}{19}
+\indexentry{Program/simulationEnvironmentVariables.c@{Program/simulationEnvironmentVariables.c}|hyperpage}{20}
+\indexentry{simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}!onBridgeEnv@{onBridgeEnv}|hyperpage}{21}
+\indexentry{onBridgeEnv@{onBridgeEnv}!simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}|hyperpage}{21}
+\indexentry{simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}!simulationEnvironmentVariables@{simulationEnvironmentVariables}|hyperpage}{21}
+\indexentry{simulationEnvironmentVariables@{simulationEnvironmentVariables}!simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}|hyperpage}{21}
+\indexentry{simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}!envVar@{envVar}|hyperpage}{21}
+\indexentry{envVar@{envVar}!simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}|hyperpage}{21}
+\indexentry{simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}!mutex@{mutex}|hyperpage}{21}
+\indexentry{mutex@{mutex}!simulationEnvironmentVariables.c@{simulationEnvironmentVariables.c}|hyperpage}{21}
+\indexentry{Program/simulationEnvironmentVariables.c@{Program/simulationEnvironmentVariables.c}|hyperpage}{22}
+\indexentry{Program/struct.c@{Program/struct.c}|hyperpage}{23}
+\indexentry{struct.c@{struct.c}!Car\_t@{Car\_t}|hyperpage}{23}
+\indexentry{Car\_t@{Car\_t}!struct.c@{struct.c}|hyperpage}{23}
+\indexentry{struct.c@{struct.c}!addCar@{addCar}|hyperpage}{24}
+\indexentry{addCar@{addCar}!struct.c@{struct.c}|hyperpage}{24}
+\indexentry{struct.c@{struct.c}!deleteList@{deleteList}|hyperpage}{24}
+\indexentry{deleteList@{deleteList}!struct.c@{struct.c}|hyperpage}{24}
+\indexentry{Program/struct.c@{Program/struct.c}|hyperpage}{24}
